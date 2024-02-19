@@ -4,6 +4,8 @@ import axios from "axios";
 import {api_key} from "../../config/config";
 import ContentItem from "../../components/contentItem/ContentItem";
 import MoviePagination from "../../components/pagination/MoviePagination";
+import {Chip} from "@mui/material";
+import Genres from "../../components/genres/Genres";
 
 
 function Trending(props) {
@@ -39,16 +41,15 @@ function Trending(props) {
 
             {/*content*/}
             <div className="row">
-                {/*<marquee behavior="alternate" scrollamount="20" direction="right" >Assalomu alekun akala</marquee>*/}
                 {
                     content && content.map((item) => (
                         <ContentItem key={item.id}
+                                     id={item.id}
                                      title={item.title || item.name}
                                      poster_path={item.poster_path}
                                      data={item.first_air_date || item.release_date}
                                      media_type={item.media_type}
                                      vote_avarage={item.vote_average}
-
                         />
 
                     ))

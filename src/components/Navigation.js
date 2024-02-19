@@ -23,9 +23,6 @@ export default function LabelBottomNavigation() {
         setValue(newValue);
     };
 
-    console.log(value)
-    console.log(history)
-
     useEffect(() => {
         if (value === 'trending') {
             history.push('/')

@@ -1,0 +1,41 @@
+@media screen and (max-width: 769px) {
+    .content-item-on-modal {
+        width: 50% !important;
+    }
+
+    body {
+        background-position-y: 130px, 1890px;
+        background-position-x: 2px, 10px;
+    }
+
+    .box-style {
+        overflow: scroll;
+    }
+
+    .di-flex {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .w-72 {
+        width: 100% !important;
+        padding-top: 10px;
+    }
+
+    .modal-title {
+        font-size: 20px !important;
+    }
+
+    .modal-overview {
+        width: 100% !important;
+        margin: 20px 0 !important;
+    }
+
+
+    .youtube-btn {
+        width: 100% !important;
+    }
+
+
+}

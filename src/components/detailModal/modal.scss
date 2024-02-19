@@ -1,0 +1,72 @@
+.box-style {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    background-color: white;
+    border: 0;
+    outline: none;
+    box-shadow: 24px 24px 24px;
+    padding: 30px;
+}
+
+.box-style .main-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-title {
+    font-size: 45px;
+    font-family: Konexy, sans-serif;
+    text-align: center;
+}
+
+.modal-overview {
+    width: 80%;
+    border: 1px solid black;
+    margin: 20px auto;
+    height: 200px;
+    padding: 15px;
+    font-size: 20px;
+    overflow-y: auto;
+}
+
+.modal-carousel {
+    width: 80%;
+    margin: auto;
+}
+
+.modal-carousel #item {
+    width: 100%;
+}
+
+.modal-carousel img {
+    width: 118.97px;
+    height: 178px;
+}
+
+.modal-carousel h6 {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.youtube-btn {
+    width: 80%;
+    margin: auto;
+    background: royalblue;
+    color: white;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    gap: 5px;
+    margin-top: 20px;
+    border: none;
+
+    &:hover {
+        background: #2f51b7;
+    }
+}

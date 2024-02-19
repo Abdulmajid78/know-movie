@@ -16,8 +16,16 @@
     scroll-behavior: smooth;
 }
 
+a {
+    text-decoration: none !important;
+}
+
 body {
     background-color: #536bbc !important;
+    background-image: url(../public/assets/images/boke.png), url(../public/assets/images/boke2.png);
+    background-repeat: no-repeat;
+    background-position-y: 130px, 890px;
+    background-position-x: -32px, 1280px;
 }
 
 /* Demonstrate a "mostly customized" scrollbar
@@ -37,10 +45,27 @@ body {
     background-color: #303e6f;
 }
 
-.col-25 {
-    flex: 0 0 auto;
-    flex-wrap: wrap!important;
+.w-72 {
+    padding-top: 1.25rem; /* 20px */
+    padding-bottom: 1.25rem; /* 20px */
+    width: 72% !important;
+}
+
+.content-item-on-modal {
+    display: flex;
+    flex-direction: column;
     width: 20% !important;
+}
+
+.css-1pi9rcw-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+    box-shadow: 0 0 7px #fff,
+    0 0 1px #fff,
+    0 0 1px #fff,
+    0 0 42px #0083ff,
+    0 0 82px #0083ff,
+    0 0 92px #f09,
+    0 0 102px #f09,
+    0 0 11px #0083ff !important;
 }
 
 .main-app-container {
@@ -83,6 +108,41 @@ body {
     bottom: 0;
 }
 
+.bottom-navigation button {
+    color: white !important;
+}
+
 .pagination ul li button, .pagination div {
     color: white;
+}
+
+@media screen and (min-width: 750px) {
+}
+
+
+@media screen and (max-width: 750px) {
+    .header-background h1 {
+        font-size: 45px;
+        font-family: Enfonix, sans-serif;
+        letter-spacing: 3px;
+        /*mix-blend-mode: color-burn;*/
+        filter: drop-shadow(6px 4px 6px #000000);
+
+        color: #fff;
+        text-shadow: 0 0 7px #fff,
+        0 0 1px #fff,
+        0 0 1px #fff,
+        0 0 42px #0083ff,
+        0 0 82px #0083ff,
+        0 0 92px #f09,
+        0 0 102px #f09,
+        0 0 11px #0083ff;
+
+    }
+
+}
+
+.css-38raov-MuiButtonBase-root-MuiChip-root .MuiChip-deleteIcon {
+    color: white !important;
+    cursor: pointer !important;
 }

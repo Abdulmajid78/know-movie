@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useReducer} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min'
 
@@ -11,6 +11,24 @@ import Series from "./pages/Series/Series";
 import Search from "./pages/Search/Search";
 
 function App(props) {
+
+    function reducer(state, action) {
+        switch (action.type) {
+            case "CHANGE":
+                return {...state,
+                    loading:false
+                };
+            default:
+                return state
+        }
+
+    }
+
+
+    const [state, dispach] = useReducer(reducer, {
+        loading: true
+    });
+
     return (
         <Router>
             <MovieHeader/>
