@@ -124,6 +124,13 @@
 
 @media screen and (max-width: 750px) {
     .card .card-header {
-        height: 333px !important;
+        height: 230px !important;
+    }
+
+    .card .type {
+        font-size: 12px;
+    }
+    .card .year {
+        font-size: 12px;
     }
 }

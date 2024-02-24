@@ -4,13 +4,12 @@ import axios from "axios";
 import {api_key} from "../../config/config";
 import ContentItem from "../../components/contentItem/ContentItem";
 import MoviePagination from "../../components/pagination/MoviePagination";
-import {Chip} from "@mui/material";
-import Genres from "../../components/genres/Genres";
 
 
 function Trending(props) {
     const [content, setContent] = useState([])
     const [page, setPage] = useState(1)
+
     // const [pageOfNumber, setPageOfNumber] = useState([])
 
 

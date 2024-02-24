@@ -1,21 +1,48 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {imgPath} from "../../config/config";
 import './contentItem.scss'
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import {Skeleton} from "@mui/material";
 import DetailModal from "../detailModal/DetailModal";
 
+
 function ContentItem({id, title, poster_path, data, media_type, vote_avarage}) {
     const [loading, setLoading] = useState(false);
+    const [skeletonHeight, setSkeletonHeight] = useState(
+        window.innerWidth >= 750 ? '350px':'230px'
+    );
+
 
     setTimeout(() => {
         setLoading(true); // Set loading to false after a certain time (simulated loading)
     }, 2000);
 
+    useEffect(() => {
+        // Check media width and adjust skeleton height accordingly
+        const handleResize = () => {
+            const screenWidth = window.innerWidth;
+            if (screenWidth >= 750) {
+                setSkeletonHeight("350px");
+            } else {
+                setSkeletonHeight("230px");
+            }
+        };
+
+        // Listen for window resize events
+        window.addEventListener("resize", handleResize);
+
+        // Cleanup function to remove event listener
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []); // Empty dependency array ensures the effect runs only once
+
+    console.log(skeletonHeight)
 
     return (
         <DetailModal id={id} media_type={media_type}>
             <div className="card">
+
                 {loading ? <div className="card-header">
                         <img className="card-img-top"
                              src={poster_path ? imgPath + poster_path : '/assets/images/poster.webp'} alt={title}/>
@@ -24,15 +51,14 @@ function ContentItem({id, title, poster_path, data, media_type, vote_avarage}) {
                         </div>
                         <div
                             className={vote_avarage > 8 ? "vote" : vote_avarage > 6 ? "vote vote-warning" : 'vote vote-danger'}>
-                            {vote_avarage <= 2 && data?.slice(0, 4) == 2024 ? 'new' : vote_avarage <= 2 && data?.slice(0, 4) != 2024 ? 'NOT RATED' : vote_avarage.toFixed(1)}
+                            {vote_avarage <= 2 && data?.slice(0, 4) === 2024 ? 'new' : vote_avarage <= 2 && data?.slice(0, 4) !== 2024 ? 'NOT RATED' : vote_avarage.toFixed(1)}
                         </div>
                     </div> :
                     <Skeleton animation="wave"
                               variant="retangle"
                               width="100%"
-                              height="350px"
+                              height={skeletonHeight}
                               style={{border: 'none'}}
-
                     />}
                 <div className="card-body">
                     {loading ? <div className="title">{title}</div> :
